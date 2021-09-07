@@ -48,9 +48,9 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                       onTap: () {
                         Navigator.of(context).pushReplacement(
                           PageRouteBuilder(
-                              pageBuilder: (context, animation1, animation2) =>
-                                  HomeScreen(),
-                              transitionDuration: Duration.zero),
+                            pageBuilder: (context, animation1, animation2) =>
+                                HomeScreen(),
+                          ),
                         );
                       },
                       child: Container(
