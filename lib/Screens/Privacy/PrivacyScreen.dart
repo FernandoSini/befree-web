@@ -113,15 +113,16 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
       appBar: Responsive.isSmallScreen(context)
           ? AppBar()
           : PreferredSize(
-              child: TopBarWidget(0),
+              child: Container(child: TopBarWidget(0)),
               preferredSize: Size(screenSize.width, 1000),
             ),
+      extendBodyBehindAppBar: true,
       body: Container(
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                height: screenSize.height * 0.7,
+                height: screenSize.height,
                 // foregroundDecoration: BoxDecoration(
                 //   color: Color(0xFF9a00e6).withOpacity(0.5),
                 // ),
@@ -129,22 +130,40 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                   image: DecorationImage(
                     image: AssetImage("./assets/privacy.jpg"),
                     fit: BoxFit.cover,
+                    // colorFilter: ColorFilter.mode(
+                    //     Color(0xFF9a00e6), BlendMode.colorBurn),
                     colorFilter: ColorFilter.mode(
-                        Color(0xFF9a00e6), BlendMode.colorBurn),
-                  ),
-                ),
-                child: Center(
-                  child: Text(
-                    "Privacy",
-                    style: TextStyle(
-                      fontFamily: "Segoe",
-                      fontSize: 50,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                      Colors.grey,
+                      BlendMode.darken,
                     ),
                   ),
                 ),
-              )
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(
+                      child: Text(
+                        "Privacy",
+                        style: TextStyle(
+                          fontFamily: "Segoe",
+                          fontSize: 50,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      child: Text(
+                        "Your privacy is important for us",
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),

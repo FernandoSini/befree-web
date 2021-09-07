@@ -57,7 +57,8 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                         child: Text(
                           "BeFree",
                           style: TextStyle(
-                            color: Color(0xFF9a00e6),
+                            // color: Color(0xFF9a00e6),
+                            color: Colors.pinkAccent[400],
                             fontFamily: "Segoe",
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -75,12 +76,12 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                       ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushReplacement(
-                          PageRouteBuilder(
-                            pageBuilder: (context, animation1, animation2) =>
-                                AboutUsScreen(),
-                          ),
-                        );
+                        // Navigator.of(context).pushReplacement(
+                        //   PageRouteBuilder(
+                        //     pageBuilder: (context, animation1, animation2) =>
+                        //         AboutUsScreen(),
+                        //   ),
+                        // );
                       },
                       hoverColor: Colors.transparent,
                       onHover: (value) {
@@ -91,7 +92,8 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                           children: [
                             Icon(
                               Icons.info_outline,
-                              color: Color(0xFF9a00e6),
+                              // color: Color(0xFF9a00e6),
+                              color: Colors.pinkAccent[400],
                             ),
                             const SizedBox(
                               width: 5,
@@ -99,7 +101,8 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                             Text(
                               "About Us",
                               style: TextStyle(
-                                color: Color(0xFF9a00e6),
+                                // color: Color(0xFF9a00e6),
+                                color: Colors.pinkAccent[400],
                                 fontFamily: "Segoe",
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
@@ -130,7 +133,8 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                           children: [
                             Icon(
                               Icons.privacy_tip_outlined,
-                              color: Color(0xFF9a00e6),
+                              // color: Color(0xFF9a00e6),
+                              color: Colors.pinkAccent[400],
                             ),
                             const SizedBox(
                               width: 5,
@@ -138,7 +142,8 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                             Text(
                               "Privacy",
                               style: TextStyle(
-                                color: Color(0xFF9a00e6),
+                                // color: Color(0xFF9a00e6),
+                                color: Colors.pinkAccent[400],
                                 fontFamily: "Segoe",
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
@@ -169,7 +174,8 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                           children: [
                             Icon(
                               Icons.live_help_outlined,
-                              color: Color(0xFF9a00e6),
+                              // color: Color(0xFF9a00e6),
+                              color: Colors.pinkAccent[400],
                             ),
                             const SizedBox(
                               width: 5,
@@ -177,7 +183,8 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                             Text(
                               "Help",
                               style: TextStyle(
-                                color: Color(0xFF9a00e6),
+                                // color: Color(0xFF9a00e6),
+                                color: Colors.pinkAccent[400],
                                 fontFamily: "Segoe",
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,

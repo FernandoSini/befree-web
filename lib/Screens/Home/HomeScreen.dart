@@ -18,13 +18,69 @@ class _HomeScreenState extends State<HomeScreen> {
               child: TopBarWidget(1),
               preferredSize: Size(screenSize.width, 1000),
             ),
+      extendBodyBehindAppBar: true,
       body: Container(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Center(
-                child: Text("Maconha"),
-              )
+              Container(
+                height: screenSize.height,
+                width: screenSize.width,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("./assets/celebrating.jpg"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "A new way to connect people",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: "Segoe",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // Container(
+              //   height: screenSize.height * 0.5,
+              //   width: screenSize.width,
+              //   color: Color(0xFF9a00e6),
+              //   child: Column(
+              //     mainAxisAlignment: MainAxisAlignment.center,
+              //     crossAxisAlignment: CrossAxisAlignment.stretch,
+              //     children: [
+              //       Container(
+              //         child: Wrap(
+              //           spacing: 100,
+              //           children: [
+              //             Text(
+              //               "About us",
+              //               style: TextStyle(
+              //                 color: Colors.white,
+              //                 fontFamily: "Segoe",
+              //                 fontWeight: FontWeight.bold,
+              //               ),
+              //             ),
+              //             Text(
+              //               "About us",
+              //               style: TextStyle(
+              //                 color: Colors.white,
+              //                 fontFamily: "Segoe",
+              //                 fontWeight: FontWeight.bold,
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         ),
