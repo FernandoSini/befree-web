@@ -22,82 +22,60 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(32.0)),
           ),
+          title: Center(
+            child: Text(
+              "Privacy Policy",
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.close,
+                color: Colors.pinkAccent[400],
+              ),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+          actionsOverflowDirection: VerticalDirection.down,
           contentPadding: EdgeInsets.only(top: 10.0),
           content: Container(
             height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width * 0.5,
             child: SingleChildScrollView(
               physics: BouncingScrollPhysics(),
-              child: Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                child: ListView(
-                  // mainAxisAlignment: MainAxisAlignment.start,
-                  // crossAxisAlignment: CrossAxisAlignment.stretch,
-                  // mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    SizedBox(
-                      height: 5.0,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 30.0, right: 30.0),
-                      child: Container(
-                        height: MediaQuery.of(context).size.height,
-                        child: SingleChildScrollView(
-                          padding: EdgeInsets.only(bottom: 100),
-                          physics: BouncingScrollPhysics(),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10),
-                                child: Text(
-                                  "Privacy Policy",
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Text("${politica}"),
-                              Container(
-                                padding: EdgeInsets.only(top: 10, bottom: 30),
-                                width: MediaQuery.of(context).size.width,
-                                child: ElevatedButton(
-                                  child: Text(
-                                    "Ok, I accept",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Color(0xFF9a00e6),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(25),
-                                    ),
-                                  ),
-                                  onPressed: Navigator.of(context).pop,
-                                ),
-                              )
-                            ],
-                          ),
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(left: 20, right: 20),
+                    child: Text("$politica"),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.only(bottom: 20, left: 10, right: 10),
+                    height: 50,
+                    child: ElevatedButton(
+                      child: Text(
+                        "Ok, I accept",
+                        style: TextStyle(
+                          color: Colors.white,
                         ),
                       ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.pinkAccent[400],
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                      ),
+                      onPressed: Navigator.of(context).pop,
                     ),
-
-                    // InkWell(
-                    //   child: Container(
-                    //     padding: EdgeInsets.only(top: 20.0),
-                    //     decoration: BoxDecoration(
-                    //       color: Colors.blue,
-                    //       borderRadius: BorderRadius.only(
-                    //           bottomLeft: Radius.circular(32.0),
-                    //           bottomRight: Radius.circular(32.0)),
-                    //     ),
-                    //     child: Text(
-                    //       "Rate Product",
-                    //       style: TextStyle(color: Colors.white),
-                    //       textAlign: TextAlign.center,
-                    //     ),
-                    //   ),
-                    // ),
-                  ],
-                ),
+                  )
+                ],
               ),
             ),
           ),
@@ -111,9 +89,9 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
-              child: Container(child: TopBarWidget(0)),
-              preferredSize: Size(screenSize.width, 1000),
-            ),
+        child: Container(child: TopBarWidget(0)),
+        preferredSize: Size(screenSize.width, 1000),
+      ),
       extendBodyBehindAppBar: true,
       body: Container(
         child: SingleChildScrollView(
@@ -156,6 +134,31 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                         textAlign: TextAlign.justify,
                         style: TextStyle(
                           color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Container(
+                      height: 50,
+                      width: screenSize.width * 0.3,
+                      child: ElevatedButton(
+                        child: Text(
+                          "Read More",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        onPressed: () {
+                          privacy();
+                        },
+                        style: ElevatedButton.styleFrom(
+                          // primary: Colors.pinkAccent[400],
+                          primary: Colors.pinkAccent[400],
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
                       ),
                     )
