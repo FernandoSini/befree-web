@@ -14,9 +14,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: Responsive.isSmallScreen(context)
-          ? AppBar()
-          : PreferredSize(
+      appBar: PreferredSize(
               child: TopBarWidget(1),
               preferredSize: Size(screenSize.width, 1000),
             ),

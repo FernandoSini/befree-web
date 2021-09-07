@@ -12,12 +12,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: Responsive.isSmallScreen(context)
-          ? AppBar()
-          : PreferredSize(
-              child: TopBarWidget(1),
-              preferredSize: Size(screenSize.width, 1000),
-            ),
+      appBar: PreferredSize(
+        child: TopBarWidget(1),
+        preferredSize: Size(screenSize.width, 1000),
+      ),
       extendBodyBehindAppBar: true,
       body: Container(
         child: SingleChildScrollView(
