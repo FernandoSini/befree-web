@@ -9,6 +9,12 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  void didChangeDependencies() {
+    precacheImage(AssetImage("./assets/celebrating.jpg"), context);
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(

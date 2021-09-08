@@ -1,4 +1,5 @@
 import 'package:befreeweb/Screens/About/AboutUsScreen.dart';
+import 'package:befreeweb/Screens/Help/HelpScreen.dart';
 import 'package:befreeweb/Screens/Home/HomeScreen.dart';
 import 'package:befreeweb/Screens/Privacy/PrivacyScreen.dart';
 import 'package:flutter/material.dart';
@@ -158,12 +159,12 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                     ),
                     InkWell(
                       onTap: () {
-                        // Navigator.of(context).pushReplacement(
-                        //   PageRouteBuilder(
-                        //     pageBuilder: (context, animation1, animation2) =>
-                        //         PrivacyScreen(),
-                        //   ),
-                        // );
+                        Navigator.of(context).pushReplacement(
+                          PageRouteBuilder(
+                            pageBuilder: (context, animation1, animation2) =>
+                                HelpScreen(),
+                          ),
+                        );
                       },
                       hoverColor: Colors.transparent,
                       onHover: (value) {
@@ -173,7 +174,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                         child: Wrap(
                           children: [
                             Icon(
-                              Icons.live_help_outlined,
+                             Icons.live_help_outlined,
                               // color: Color(0xFF9a00e6),
                               color: Colors.pinkAccent[400],
                             ),
