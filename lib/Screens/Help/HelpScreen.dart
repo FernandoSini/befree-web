@@ -10,23 +10,45 @@ class HelpScreen extends StatefulWidget {
 
 class _HelpScreenState extends State<HelpScreen> {
   @override
+  void didChangeDependencies() {
+    precacheImage(AssetImage("./assets/help.jpg"), context);
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
-        child: TopBarWidget(1),
+        child: TopBarWidget(
+          opacity: 1,
+          // color: Color(0xff9a00e6),
+        ),
         preferredSize: Size(screenSize.width, 1000),
       ),
       extendBodyBehindAppBar: true,
       body: Container(
+        height: screenSize.height,
+        width: screenSize.width,
+        color: Colors.white,
         child: SingleChildScrollView(
           physics: NeverScrollableScrollPhysics(),
           child: Wrap(
             children: [
               Container(
                 height: screenSize.height,
-                width: screenSize.width * 0.5,
-                color: Color(0xFF9a00e6),
+                width: screenSize.width * 0.55,
+                // color: Color(0xFF9a00e6),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("./assets/help.jpg"),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                      Color(0xFF9a00e6).withOpacity(1),
+                      BlendMode.lighten,
+                    ),
+                  ),
+                ),
                 // color: Colors.blue[900],
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +57,7 @@ class _HelpScreenState extends State<HelpScreen> {
                       child: Text(
                         "Contact Us",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.pinkAccent[400],
                           fontSize: 50,
                           fontFamily: "Segoe",
                           fontWeight: FontWeight.bold,
@@ -43,10 +65,11 @@ class _HelpScreenState extends State<HelpScreen> {
                       ),
                     ),
                     Container(
+                      margin: EdgeInsets.only(bottom: 20),
                       child: Text(
-                        "Find your solution for your problem",
+                        "Find a solution for your problem",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.pinkAccent[400],
                         ),
                       ),
                     ),
@@ -56,7 +79,7 @@ class _HelpScreenState extends State<HelpScreen> {
               Container(
                 height: screenSize.height,
                 alignment: Alignment.center,
-                width: screenSize.width * 0.5,
+                width: screenSize.width * 0.4,
                 padding: EdgeInsets.only(left: 50, right: 50),
                 child: TextFormField(
                   decoration: InputDecoration(

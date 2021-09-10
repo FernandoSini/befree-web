@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 import 'Responsive.dart';
 
 class TopBarWidget extends StatefulWidget {
+  TopBarWidget({required this.opacity, this.color});
   final double opacity;
-  TopBarWidget(this.opacity);
-
+  final Color? color;
   @override
   _TopBarWidgetState createState() => _TopBarWidgetState();
 }
@@ -59,7 +59,9 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                           "BeFree",
                           style: TextStyle(
                             // color: Color(0xFF9a00e6),
-                            color: Colors.pinkAccent[400],
+                            color: widget.color != null
+                                ? widget.color
+                                : Colors.pinkAccent[400],
                             fontFamily: "Segoe",
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -77,12 +79,12 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                       ),
                     InkWell(
                       onTap: () {
-                        // Navigator.of(context).pushReplacement(
-                        //   PageRouteBuilder(
-                        //     pageBuilder: (context, animation1, animation2) =>
-                        //         AboutUsScreen(),
-                        //   ),
-                        // );
+                        Navigator.of(context).pushReplacement(
+                          PageRouteBuilder(
+                            pageBuilder: (context, animation1, animation2) =>
+                                AboutUsScreen(),
+                          ),
+                        );
                       },
                       hoverColor: Colors.transparent,
                       onHover: (value) {
@@ -174,7 +176,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                         child: Wrap(
                           children: [
                             Icon(
-                             Icons.live_help_outlined,
+                              Icons.live_help_outlined,
                               // color: Color(0xFF9a00e6),
                               color: Colors.pinkAccent[400],
                             ),

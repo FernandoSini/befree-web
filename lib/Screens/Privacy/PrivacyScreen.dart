@@ -89,7 +89,11 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
-        child: Container(child: TopBarWidget(0)),
+        child: Container(
+          child: TopBarWidget(
+            opacity: 0,
+          ),
+        ),
         preferredSize: Size(screenSize.width, 1000),
       ),
       extendBodyBehindAppBar: true,

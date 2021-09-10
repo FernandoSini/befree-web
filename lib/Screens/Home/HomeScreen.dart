@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
-        child: TopBarWidget(1),
+        child: TopBarWidget(opacity:1),
         preferredSize: Size(screenSize.width, 1000),
       ),
       extendBodyBehindAppBar: true,
