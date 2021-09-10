@@ -41,13 +41,16 @@ class _HelpScreenState extends State<HelpScreen> {
                 // color: Color(0xFF9a00e6),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("./assets/help.jpg"),
-                    fit: BoxFit.cover,
-                    colorFilter: ColorFilter.mode(
-                      Color(0xFF9a00e6).withOpacity(1),
-                      BlendMode.lighten,
-                    ),
-                  ),
+                      image: AssetImage("./assets/help.jpg"),
+                      fit: BoxFit.cover,
+                      // colorFilter: ColorFilter.mode(
+                      //   Color(0xFF9a00e6).withOpacity(1),
+                      //   BlendMode.lighten,
+                      // ),
+                      colorFilter: ColorFilter.mode(
+                        Colors.blueGrey.withOpacity(0.8),
+                        BlendMode.lighten,
+                      )),
                 ),
                 // color: Colors.blue[900],
                 child: Column(
@@ -83,7 +86,16 @@ class _HelpScreenState extends State<HelpScreen> {
                 padding: EdgeInsets.only(left: 50, right: 50),
                 child: TextFormField(
                   decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.search_sharp),
+                    disabledBorder: OutlineInputBorder(
+                       borderRadius: BorderRadius.circular(5),
+                      borderSide: BorderSide(
+                        color: Colors.grey,
+                      ),
+                    ),
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.search_sharp),
+                      onPressed: () {},
+                    ),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5),
                       borderSide: BorderSide(
