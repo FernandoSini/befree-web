@@ -1,3 +1,4 @@
+import 'package:befreeweb/Widgets/FooterWidget.dart';
 import 'package:befreeweb/Widgets/Responsive.dart';
 import 'package:befreeweb/Widgets/TopBarWidget.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,20 @@ class PrivacyScreen extends StatefulWidget {
 }
 
 class _PrivacyScreenState extends State<PrivacyScreen> {
+  List<bool> onHoverList = [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ];
+  final ScrollController scrollController = ScrollController();
   Future<String> loadPrivacy(BuildContext context) async {
     return await DefaultAssetBundle.of(context)
         .loadString('assets/politicaDePrivacidade.txt');
@@ -45,6 +60,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width * 0.5,
             child: SingleChildScrollView(
+              controller: scrollController,
               physics: BouncingScrollPhysics(),
               child: Column(
                 children: [
@@ -92,6 +108,8 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
         child: Container(
           child: TopBarWidget(
             opacity: 0,
+            // color: Color(0xFF9a00e6),
+            color: Colors.pink[400],
           ),
         ),
         preferredSize: Size(screenSize.width, 1000),
@@ -99,6 +117,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
       extendBodyBehindAppBar: true,
       body: Container(
         child: SingleChildScrollView(
+          controller: scrollController,
           child: Column(
             children: [
               Container(
@@ -112,9 +131,13 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                     fit: BoxFit.cover,
                     // colorFilter: ColorFilter.mode(
                     //     Color(0xFF9a00e6), BlendMode.colorBurn),
+                    // colorFilter: ColorFilter.mode(
+                    //   Colors.grey,
+                    //   BlendMode.darken,
+                    // ),
                     colorFilter: ColorFilter.mode(
-                      Colors.grey,
-                      BlendMode.darken,
+                      Colors.blueGrey,
+                      BlendMode.lighten,
                     ),
                   ),
                 ),
@@ -127,7 +150,8 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                         style: TextStyle(
                           fontFamily: "Segoe",
                           fontSize: 50,
-                          color: Colors.white,
+                          // color: Colors.pink[400],
+                          color: Color(0xFF9a00e6),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -137,8 +161,9 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                         "Your privacy is important for us",
                         textAlign: TextAlign.justify,
                         style: TextStyle(
-                          color: Colors.white,
-                        ),
+                            // color: Colors.white,
+                            //  color: Color(0xFF9a00e6),
+                            color: Colors.black),
                       ),
                     ),
                     const SizedBox(
@@ -159,7 +184,8 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                         },
                         style: ElevatedButton.styleFrom(
                           // primary: Colors.pinkAccent[400],
-                          primary: Colors.pinkAccent[400],
+                          // primary: Colors.pink[400],
+                          primary: Color(0xFF9a00e6),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -169,6 +195,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                   ],
                 ),
               ),
+              FooterWidget(onHoverList),
             ],
           ),
         ),

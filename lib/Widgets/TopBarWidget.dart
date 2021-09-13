@@ -21,7 +21,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
     return PreferredSize(
       preferredSize: Size(screenSize.width, 3000),
       child: Container(
-        color: Colors.transparent,
+        color: Colors.white.withOpacity(widget.opacity),
         child: Padding(
           padding: EdgeInsets.all(20),
           child: SingleChildScrollView(
@@ -43,9 +43,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                       ),
                     InkWell(
                       hoverColor: Colors.transparent,
-                      onHover: (value) {
-                        print(value);
-                      },
+                      onHover: (value) {},
                       onTap: () {
                         Navigator.of(context).pushReplacement(
                           PageRouteBuilder(
@@ -61,7 +59,7 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                             // color: Color(0xFF9a00e6),
                             color: widget.color != null
                                 ? widget.color
-                                : Colors.pinkAccent[400],
+                                : Colors.pink[400],
                             fontFamily: "Segoe",
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -87,16 +85,16 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                         );
                       },
                       hoverColor: Colors.transparent,
-                      onHover: (value) {
-                        print(value);
-                      },
+                      onHover: (value) {},
                       child: Container(
                         child: Wrap(
                           children: [
                             Icon(
                               Icons.info_outline,
                               // color: Color(0xFF9a00e6),
-                              color: Colors.pinkAccent[400],
+                              color: widget.color != null
+                                  ? widget.color
+                                  : Colors.pink[400],
                             ),
                             const SizedBox(
                               width: 5,
@@ -105,7 +103,9 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                               "About Us",
                               style: TextStyle(
                                 // color: Color(0xFF9a00e6),
-                                color: Colors.pinkAccent[400],
+                                color: widget.color != null
+                                    ? widget.color
+                                    : Colors.pink[400],
                                 fontFamily: "Segoe",
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
@@ -128,16 +128,16 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                         );
                       },
                       hoverColor: Colors.transparent,
-                      onHover: (value) {
-                        print(value);
-                      },
+                      onHover: (value) {},
                       child: Container(
                         child: Wrap(
                           children: [
                             Icon(
                               Icons.privacy_tip_outlined,
                               // color: Color(0xFF9a00e6),
-                              color: Colors.pinkAccent[400],
+                              color: widget.color != null
+                                  ? widget.color
+                                  : Colors.pink[400],
                             ),
                             const SizedBox(
                               width: 5,
@@ -146,7 +146,9 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                               "Privacy",
                               style: TextStyle(
                                 // color: Color(0xFF9a00e6),
-                                color: Colors.pinkAccent[400],
+                                color: widget.color != null
+                                    ? widget.color
+                                    : Colors.pink[400],
                                 fontFamily: "Segoe",
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,
@@ -169,16 +171,16 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                         );
                       },
                       hoverColor: Colors.transparent,
-                      onHover: (value) {
-                        print(value);
-                      },
+                      onHover: (value) {},
                       child: Container(
                         child: Wrap(
                           children: [
                             Icon(
                               Icons.live_help_outlined,
                               // color: Color(0xFF9a00e6),
-                              color: Colors.pinkAccent[400],
+                              color: widget.color != null
+                                  ? widget.color
+                                  : Colors.pink[400],
                             ),
                             const SizedBox(
                               width: 5,
@@ -187,7 +189,9 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                               "Help",
                               style: TextStyle(
                                 // color: Color(0xFF9a00e6),
-                                color: Colors.pinkAccent[400],
+                                color: widget.color != null
+                                    ? widget.color
+                                    : Colors.pink[400],
                                 fontFamily: "Segoe",
                                 fontWeight: FontWeight.bold,
                                 fontSize: 15,

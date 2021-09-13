@@ -1,3 +1,4 @@
+import 'package:befreeweb/Widgets/FooterWidget.dart';
 import 'package:befreeweb/Widgets/Responsive.dart';
 import 'package:befreeweb/Widgets/TopBarWidget.dart';
 import 'package:flutter/material.dart';
@@ -10,17 +11,33 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void didChangeDependencies() {
-    precacheImage(AssetImage("./assets/celebrating.jpg"), context);
     super.didChangeDependencies();
+    precacheImage(AssetImage("./assets/celebrating.jpg"), context);
   }
 
+  List<bool> onHoverList = [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ];
   @override
   Widget build(BuildContext context) {
     final ScrollController scrollController = ScrollController();
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
-        child: TopBarWidget(opacity: 1),
+        child: TopBarWidget(
+          opacity: 0,
+          // color: Color(0xFF9a00e6),
+        ),
         preferredSize: Size(screenSize.width, 1000),
       ),
       extendBodyBehindAppBar: true,
@@ -29,10 +46,13 @@ class _HomeScreenState extends State<HomeScreen> {
           controller: scrollController,
           child: Column(
             children: [
+              //para usar um fade in no container devemos usar junto o stack
+              // child: FadeInImage.assetNetwork(placeholder: "./assets/celebrating.jpg", image: "./assets/celebrating.jpg"),)
               Container(
                 height: screenSize.height,
                 width: screenSize.width,
                 decoration: BoxDecoration(
+                  color: Colors.white,
                   image: DecorationImage(
                     image: AssetImage("./assets/celebrating.jpg"),
                     fit: BoxFit.cover,
@@ -53,135 +73,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ),
-              // Container(
-              //   height: screenSize.height * 0.5,
-              //   width: screenSize.width,
-              //   color: Color(0xFF9a00e6),
-              //   child: Column(
-              //     mainAxisAlignment: MainAxisAlignment.center,
-              //     crossAxisAlignment: CrossAxisAlignment.stretch,
-              //     children: [
-              //       Container(
-              //         child: Wrap(
-              //           spacing: 100,
-              //           children: [
-              //             Text(
-              //               "About us",
-              //               style: TextStyle(
-              //                 color: Colors.white,
-              //                 fontFamily: "Segoe",
-              //                 fontWeight: FontWeight.bold,
-              //               ),
-              //             ),
-              //             Text(
-              //               "About us",
-              //               style: TextStyle(
-              //                 color: Colors.white,
-              //                 fontFamily: "Segoe",
-              //                 fontWeight: FontWeight.bold,
-              //               ),
-              //             ),
-              //           ],
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
-              Container(
-                height: screenSize.height * 0.5,
-                width: screenSize.width,
-                color: Colors.purple[600],
-                child: Wrap(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 300, top: 50),
-                      child: Column(
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Text(
-                              "Company",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Segoe",
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          InkWell(
-                            onTap: () {},
-                            child: Text(
-                              "About us",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Segoe",
-                                fontSize: 12,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 200, top: 50),
-                      child: Column(
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Text(
-                              "Contact",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Segoe",
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 200, top: 50),
-                      child: Column(
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Text(
-                              "Work with us",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Segoe",
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(left: 200, top: 50),
-                      child: Column(
-                        children: [
-                          InkWell(
-                            onTap: () {},
-                            child: Text(
-                              "Legal",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "Segoe",
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+
+              FooterWidget(onHoverList)
             ],
           ),
         ),
