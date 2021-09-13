@@ -34837,7 +34837,7 @@ s.toString
 U.aaF(new L.h9("./assets/help.jpg"),s)},
 V(a,b){var s,r,q,p,o,n=null,m=4288282854,l="Need some help?",k=t.w,j=b.R(k).f.a,i=j.a,h=j.b,g=b.R(k).f.a.a<800?i:i*0.55
 g=M.bg(n,n,n,new S.eF(n,X.a8c(new H.nc(P.as(204,96,125,139),C.dM),C.dO,new L.h9("./assets/help.jpg")),n,n,n,n,C.ac),h,n,n,g)
-k=b.R(k).f.a.a<800?new V.aj(100,0,100,0):n
+k=b.R(k).f.a.a<800?new V.aj(170,0,170,0):n
 k=M.bg(n,L.bA("Help",n,n,n,A.bt(n,n,new P.w(m),n,n,n,n,n,"Segoe",n,n,50,n,C.V,n,n,!0,n,n,n,n,n,n,n,n),n,n),n,n,n,n,k,n)
 s=M.bg(n,L.bA("Find a solution for your problem.",n,n,n,A.bt(n,n,C.q,n,n,n,n,n,n,n,n,n,n,n,n,n,!0,n,n,n,n,n,n,n,n),n,n),n,n,n,new V.aj(0,0,0,20),n,n)
 r=A.bt(n,n,new P.w(m),n,n,n,n,n,n,n,n,n,n,n,n,n,!0,n,n,n,n,n,n,n,n)
