@@ -112,7 +112,7 @@ class _HelpScreenState extends State<HelpScreen> {
                       children: [
                         Container(
                           padding: Responsive.isSmallScreen(context)
-                              ? EdgeInsets.only(left: 100, right: 100)
+                              ? EdgeInsets.only(left: 170, right: 170)
                               : null,
                           child: Text(
                             "Help",
