@@ -91,7 +91,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                                       ),
                                     ),
                                     TextSpan(
-                                      text: "BeFree",
+                                      text: " BeFree",
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontFamily: "Segoe",
