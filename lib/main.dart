@@ -15,10 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'BeFreeWeb',
       debugShowCheckedModeBanner: false,
-
       checkerboardOffscreenLayers: false,
       checkerboardRasterCacheImages: false,
-
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
