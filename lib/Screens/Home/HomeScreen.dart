@@ -35,8 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: PreferredSize(
         child: TopBarWidget(
-          opacity: 0,
-          // color: Color(0xFF9a00e6),
+          opacity: 1,
+          radius: 20,
+          color: Color(0xFF9a00e6),
         ),
         preferredSize: Size(screenSize.width, 1000),
       ),
@@ -62,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "A new way to connect people",
+                      "A new way to connect people...",
                       style: TextStyle(
                         color: Colors.white,
                         fontFamily: "Segoe",

@@ -108,8 +108,9 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
         child: Container(
           child: TopBarWidget(
             opacity: 0,
-            // color: Color(0xFF9a00e6),
-            color: Colors.pink[400],
+            color: Color(0xFF9a00e6),
+            radius: 20,
+            // color: Colors.pink[400],
           ),
         ),
         preferredSize: Size(screenSize.width, 1000),

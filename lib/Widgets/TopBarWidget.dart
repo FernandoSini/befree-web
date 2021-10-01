@@ -7,9 +7,10 @@ import 'package:flutter/material.dart';
 import 'Responsive.dart';
 
 class TopBarWidget extends StatefulWidget {
-  TopBarWidget({required this.opacity, this.color});
+  TopBarWidget({required this.opacity, this.color, this.radius});
   final double opacity;
   final Color? color;
+  final double? radius;
   @override
   _TopBarWidgetState createState() => _TopBarWidgetState();
 }
@@ -21,7 +22,16 @@ class _TopBarWidgetState extends State<TopBarWidget> {
     return PreferredSize(
       preferredSize: Size(screenSize.width, 3000),
       child: Container(
-        color: Colors.white.withOpacity(widget.opacity),
+        // color: Colors.white.withOpacity(widget.opacity),
+        decoration: widget.radius != null
+            ? BoxDecoration(
+                borderRadius: BorderRadius.circular(widget.radius!),
+                color: Colors.white.withOpacity(widget.opacity),
+              )
+            : null,
+        margin: widget.radius != null
+            ? EdgeInsets.only(top: 10, left: 20, right: 20)
+            : null,
         child: Padding(
           padding: EdgeInsets.all(20),
           child: SingleChildScrollView(

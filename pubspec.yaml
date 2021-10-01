@@ -53,6 +53,8 @@ flutter:
       - assets/celebrating.jpg
       - assets/team.jpg
       - assets/help.jpg
+      - assets/iphonemock1.png
+      - assets/iphonemock2.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

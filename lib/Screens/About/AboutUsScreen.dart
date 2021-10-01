@@ -17,9 +17,9 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
 
   @override
   void didChangeDependencies() {
-     precacheImage(AssetImage("./assets/team.jpg"), context);
+    precacheImage(AssetImage("./assets/team.jpg"), context);
+    precacheImage(AssetImage("./assets/iphonemock1.png"), context);
     super.didChangeDependencies();
-   
   }
 
   List<bool> onHoverList = [
@@ -58,68 +58,141 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                 children: [
                   Column(
                     children: [
+                      // Container(
+                      //   padding: EdgeInsets.only(top: 10),
+                      //   child: RichText(
+                      //     text: TextSpan(
+                      //       children: [
+                      //         TextSpan(
+                      //           text: "About",
+                      //           style: TextStyle(
+                      //             fontWeight: FontWeight.bold,
+                      //             fontFamily: "Segoe",
+                      //             fontSize: 50,
+                      //             color: Colors.black,
+                      //           ),
+                      //         ),
+                      //         TextSpan(
+                      //           text: " BeFree",
+                      //           style: TextStyle(
+                      //             fontWeight: FontWeight.bold,
+                      //             fontFamily: "Segoe",
+                      //             fontSize: 50,
+                      //             color: Color(0xFF9a00e6),
+                      //           ),
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
                       Container(
-                        height: screenSize.height * 0.5,
+                        height: screenSize.height * 0.91,
                         width: screenSize.width,
                         // color: Color(0xFF9a00e6),
                         padding: Responsive.isSmallScreen(context)
                             ? EdgeInsets.only(left: 100, right: 100)
                             : null,
-                        child: Column(
+                        child: ListView(
+                          physics: NeverScrollableScrollPhysics(),
                           children: [
-                            Container(
-                              padding: EdgeInsets.only(top: 10),
-                              // child: Text(
-                              //   "About Us",
-                              //   style: TextStyle(
-                              //     color: Colors.black,
-                              //     fontWeight: FontWeight.bold,
-                              //     fontFamily: "Segoe",
-                              //     fontSize: 50,
-                              //   ),
-                              // ),
-                              child: RichText(
-                                text: TextSpan(
-                                  children: [
-                                    TextSpan(
-                                      text: "About",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: "Segoe",
-                                        fontSize: 50,
-                                        color: Colors.black,
+                            Wrap(
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              children: [
+                                Container(
+                                  // margin: EdgeInsets.only(top: 50),
+                                  height: screenSize.height,
+                                  width: screenSize.width * 0.5,
+                                  child: Column(
+                                    // crossAxisAlignment:
+                                    //     CrossAxisAlignment.center,
+                                    // mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(top: 200),
+                                        child: RichText(
+                                          softWrap: true,
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text: "About",
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: "Segoe",
+                                                  fontSize: 50,
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                              TextSpan(
+                                                text: " BeFree",
+                                                style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: "Segoe",
+                                                  fontSize: 50,
+                                                  color: Color(0xFF9a00e6),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                    TextSpan(
-                                      text: " BeFree",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: "Segoe",
-                                        fontSize: 50,
-                                        color: Color(0xFF9a00e6),
+                                      Container(
+                                        padding: EdgeInsets.only(
+                                            left: 150, right: 150),
+                                        child: Text(
+                                          "Content 1 aiushdasuhdkjsaasjdhakjsdhkjashdkjashdjkasdhkjashdjkaahdkjashdjkashdjashdkahsjkdhaskdhaskdhaksdhkasdhsakdhaskjdhakjsdhaksjdhakjshdjksahdjkas",
+                                          softWrap: true,
+                                          textAlign: TextAlign.justify,
+                                          maxLines: null,
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            // fontFamily: "Segoe",
+                                            fontSize: 13,
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ),
-                            Container(
-                              margin: EdgeInsets.only(top: 50),
-                              child: Text(
-                                "Content 1",
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  // fontFamily: "Segoe",
-                                  fontSize: 13,
+                                Container(
+                                  height: screenSize.height,
+                                  width: screenSize.width * 0.5,
+                                  child: Stack(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(bottom: 65),
+                                        child: Center(
+                                          child: Container(
+                                            padding: EdgeInsets.only(top: 20),
+                                            child: Text(
+                                              "BeFree",
+                                              style: TextStyle(
+                                                color: Color(0xFF9a00e6),
+                                                fontFamily: "Segoe",
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 30,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: AssetImage(
+                                                "./assets/iphonemock1.png"),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
                           ],
                         ),
                       ),
                       Container(
-                        height: screenSize.height * 0.5,
+                        height: screenSize.height,
+                        width: screenSize.width,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
