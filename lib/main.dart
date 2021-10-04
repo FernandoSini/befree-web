@@ -20,15 +20,44 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // initialRoute: "/home",
-      routes: {
-        "/home": (context) => HomeScreen(),
-        "/aboutus": (context) => AboutUsScreen(),
-        "/help": (context) => HelpScreen(),
-        "/privacy": (context) => PrivacyScreen(),
-      },
+      initialRoute: "/home",
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case "/home":
+            return PageRouteBuilder(
+              settings: settings,
+              pageBuilder: (context, animation1, animation2) => HomeScreen(),
+            );
+          case "/aboutus":
+            return PageRouteBuilder(
+              settings: settings,
+              pageBuilder: (context, animation1, animation2) => AboutUsScreen(),
+            );
+          case "/help":
+            return PageRouteBuilder(
+              settings: settings,
+              pageBuilder: (context, animation1, animation2) => HelpScreen(),
+            );
+          case "/privacy":
+            return PageRouteBuilder(
+              settings: settings,
+              pageBuilder: (context, animation1, animation2) => PrivacyScreen(),
+            );
 
-      home: HomeScreen(),
+          // default:
+          //   return PageRouteBuilder(
+          //       settings: settings,
+          //       pageBuilder: (context, animation1, animation2) => HomeScreen());
+        }
+      },
+      // routes: {
+      //   "/home": (context) => HomeScreen(),
+      //   "/aboutus": (context) => AboutUsScreen(),
+      //   "/help": (context) => HelpScreen(),
+      //   "/privacy": (context) => PrivacyScreen(),
+      // },
+
+      // home: HomeScreen(),
     );
   }
 }

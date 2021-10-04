@@ -129,7 +129,9 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("./assets/privacy.jpg"),
-                    fit: BoxFit.cover,
+                    fit: Responsive.isSmallScreen(context)
+                        ? BoxFit.fitHeight
+                        : BoxFit.cover,
                     // colorFilter: ColorFilter.mode(
                     //     Color(0xFF9a00e6), BlendMode.colorBurn),
                     // colorFilter: ColorFilter.mode(

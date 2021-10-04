@@ -19,6 +19,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
   void didChangeDependencies() {
     precacheImage(AssetImage("./assets/team.jpg"), context);
     precacheImage(AssetImage("./assets/iphonemock1.png"), context);
+    precacheImage(AssetImage("./assets/iphonemock2.png"), context);
     super.didChangeDependencies();
   }
 
@@ -43,6 +44,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
       appBar: PreferredSize(
         child: TopBarWidget(
           opacity: 0,
+          radius: 20,
           color: Color(0xFF9a00e6),
         ),
         preferredSize: Size(screenSize.width, 1000),
@@ -86,7 +88,9 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                       //   ),
                       // ),
                       Container(
-                        height: screenSize.height * 0.91,
+                        height: Responsive.isSmallScreen(context)
+                            ? screenSize.height * 0.75
+                            : screenSize.height * 0.91,
                         width: screenSize.width,
                         // color: Color(0xFF9a00e6),
                         padding: Responsive.isSmallScreen(context)
@@ -97,18 +101,30 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                           children: [
                             Wrap(
                               crossAxisAlignment: WrapCrossAlignment.center,
+                              direction: Responsive.isSmallScreen(context)
+                                  ? Axis.vertical
+                                  : Axis.horizontal,
                               children: [
                                 Container(
                                   // margin: EdgeInsets.only(top: 50),
                                   height: screenSize.height,
-                                  width: screenSize.width * 0.5,
+                                  width: Responsive.isSmallScreen(context)
+                                      ? screenSize.width
+                                      : screenSize.width * 0.5,
                                   child: Column(
                                     // crossAxisAlignment:
                                     //     CrossAxisAlignment.center,
                                     // mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Container(
-                                        margin: EdgeInsets.only(top: 200),
+                                        margin: EdgeInsets.only(
+                                          top: 200,
+                                        ),
+                                        padding:
+                                            Responsive.isSmallScreen(context)
+                                                ? EdgeInsets.only(
+                                                    bottom: 20, right: 200)
+                                                : null,
                                         child: RichText(
                                           softWrap: true,
                                           text: TextSpan(
@@ -118,7 +134,11 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                   fontFamily: "Segoe",
-                                                  fontSize: 50,
+                                                  fontSize:
+                                                      Responsive.isSmallScreen(
+                                                              context)
+                                                          ? 30
+                                                          : 50,
                                                   color: Colors.black,
                                                 ),
                                               ),
@@ -127,7 +147,11 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                                                 style: TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                   fontFamily: "Segoe",
-                                                  fontSize: 50,
+                                                  fontSize:
+                                                      Responsive.isSmallScreen(
+                                                              context)
+                                                          ? 30
+                                                          : 50,
                                                   color: Color(0xFF9a00e6),
                                                 ),
                                               ),
@@ -136,8 +160,11 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                                         ),
                                       ),
                                       Container(
-                                        padding: EdgeInsets.only(
-                                            left: 150, right: 150),
+                                        padding:
+                                            Responsive.isSmallScreen(context)
+                                                ? EdgeInsets.only(right: 200)
+                                                : EdgeInsets.only(
+                                                    left: 150, right: 150),
                                         child: Text(
                                           "Content 1 aiushdasuhdkjsaasjdhakjsdhkjashdkjashdjkasdhkjashdjkaahdkjashdjkashdjashdkahsjkdhaskdhaskdhaksdhkasdhsakdhaskjdhakjsdhaksjdhakjshdjksahdjkas",
                                           softWrap: true,
@@ -154,62 +181,135 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                                     ],
                                   ),
                                 ),
-                                Container(
-                                  height: screenSize.height,
-                                  width: screenSize.width * 0.5,
-                                  child: Stack(
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.only(bottom: 65),
-                                        child: Center(
-                                          child: Container(
-                                            padding: EdgeInsets.only(top: 20),
-                                            child: Text(
-                                              "BeFree",
-                                              style: TextStyle(
-                                                color: Color(0xFF9a00e6),
-                                                fontFamily: "Segoe",
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 30,
+                                if (!Responsive.isSmallScreen(context))
+                                  Container(
+                                    height: screenSize.height,
+                                    width: screenSize.width * 0.5,
+                                    child: Stack(
+                                      children: [
+                                        Container(
+                                          margin: EdgeInsets.only(bottom: 65),
+                                          child: Center(
+                                            child: Container(
+                                              padding: EdgeInsets.only(top: 20),
+                                              child: Text(
+                                                "BeFree",
+                                                style: TextStyle(
+                                                  color: Color(0xFF9a00e6),
+                                                  fontFamily: "Segoe",
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 30,
+                                                ),
                                               ),
                                             ),
                                           ),
-                                        ),
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                                "./assets/iphonemock1.png"),
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                image: AssetImage(
+                                                  "./assets/iphonemock1.png",
+                                                ),
+                                                fit: BoxFit.cover),
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                      ],
+                                    ),
+                                  )
+                                else
+                                  Container(),
                               ],
                             ),
                           ],
                         ),
                       ),
-                      Container(
-                        height: screenSize.height,
-                        width: screenSize.width,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Container(
-                              // margin: EdgeInsets.only(top: 50),
-                              child: Text(
-                                "Content 2",
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  // fontFamily: "Segoe",
-                                  fontSize: 13,
-                                ),
-                              ),
+                      Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        direction: Responsive.isSmallScreen(context)
+                            ? Axis.vertical
+                            : Axis.horizontal,
+                        children: [
+                          Container(
+                            height: screenSize.height,
+                            width: screenSize.width * 0.5,
+                            child: Stack(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(top: 100),
+                                  height: screenSize.height * 0.7,
+                                  child: Center(
+                                    child: Container(
+                                      child: Text(
+                                        "BeFree",
+                                        softWrap: true,
+                                        style: TextStyle(
+                                          fontFamily: "Segoe",
+                                          fontWeight: FontWeight.bold,
+                                          color: Color(0xFF9a00e6),
+                                          fontSize: 30,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                        "./assets/iphonemock2.png",
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                          Container(
+                            height: screenSize.height,
+                            width: screenSize.width * 0.5,
+                            child: Column(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(top: 200),
+                                  child: RichText(
+                                    softWrap: true,
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: "Confia ",
+                                          style: TextStyle(
+                                            fontFamily: "Segoe",
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 50,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: "na call ",
+                                          style: TextStyle(
+                                            fontFamily: "Segoe",
+                                            fontWeight: FontWeight.bold,
+                                            color: Color(0xFF9a00e6),
+                                            fontSize: 50,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  padding: Responsive.isSmallScreen(context)
+                                      ? null
+                                      : EdgeInsets.only(left: 100, right: 100),
+                                  child: Text(
+                                    "Content 2 aiushdasuhdkjsaasjdhakjsdhkjashdkjashdjkasdhkjashdjkaahdkjashdjkashdjashdkahsjkdhaskdhaskdhaksdhkasdhsakdhaskjdhakjsdhaksjdhakjshdjksahdjkasaksudhuiasydhuasiydiasdajksdhkajs",
+                                    softWrap: true,
+                                    maxLines: null,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       )
                     ],
                   ),

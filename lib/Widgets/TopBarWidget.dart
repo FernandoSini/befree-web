@@ -55,12 +55,13 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                       hoverColor: Colors.transparent,
                       onHover: (value) {},
                       onTap: () {
-                        Navigator.of(context).pushReplacement(
-                          PageRouteBuilder(
-                            pageBuilder: (context, animation1, animation2) =>
-                                HomeScreen(),
-                          ),
-                        );
+                        // Navigator.of(context).pushReplacement(
+                        //   PageRouteBuilder(
+                        //     pageBuilder: (context, animation1, animation2) =>
+                        //         HomeScreen(),
+                        //   ),
+                        // );
+                        Navigator.of(context).pushReplacementNamed("/home");
                       },
                       child: Container(
                         child: Text(
@@ -87,12 +88,13 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                       ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushReplacement(
-                          PageRouteBuilder(
-                            pageBuilder: (context, animation1, animation2) =>
-                                AboutUsScreen(),
-                          ),
-                        );
+                        // Navigator.of(context).pushReplacement(
+                        //   PageRouteBuilder(
+                        //     pageBuilder: (context, animation1, animation2) =>
+                        //         AboutUsScreen(),
+                        //   ),
+                        // );
+                        Navigator.of(context).pushReplacementNamed("/aboutus");
                       },
                       hoverColor: Colors.transparent,
                       onHover: (value) {},
@@ -130,12 +132,13 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushReplacement(
-                          PageRouteBuilder(
-                            pageBuilder: (context, animation1, animation2) =>
-                                PrivacyScreen(),
-                          ),
-                        );
+                        // Navigator.of(context).pushReplacement(
+                        //   PageRouteBuilder(
+                        //     pageBuilder: (context, animation1, animation2) =>
+                        //         PrivacyScreen(),
+                        //   ),
+                        // );
+                        Navigator.of(context).pushReplacementNamed("/privacy");
                       },
                       hoverColor: Colors.transparent,
                       onHover: (value) {},
@@ -173,12 +176,13 @@ class _TopBarWidgetState extends State<TopBarWidget> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.of(context).pushReplacement(
-                          PageRouteBuilder(
-                            pageBuilder: (context, animation1, animation2) =>
-                                HelpScreen(),
-                          ),
-                        );
+                        // Navigator.of(context).pushReplacement(
+                        //   PageRouteBuilder(
+                        //     pageBuilder: (context, animation1, animation2) =>
+                        //         HelpScreen(),
+                        //   ),
+                        // );
+                        Navigator.of(context).pushReplacementNamed("/help");
                       },
                       hoverColor: Colors.transparent,
                       onHover: (value) {},
