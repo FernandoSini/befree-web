@@ -38,6 +38,7 @@ class _HelpScreenState extends State<HelpScreen> {
       appBar: PreferredSize(
         child: TopBarWidget(
           opacity: 0,
+          radius: 20,
           color: Color(0xff9a00e6),
         ),
         preferredSize: Size(screenSize.width, 1000),
@@ -54,57 +55,57 @@ class _HelpScreenState extends State<HelpScreen> {
             children: [
               Wrap(
                 children: [
-                  Container(
-                    height: screenSize.height,
-                    width: Responsive.isSmallScreen(context)
-                        ? screenSize.width
-                        : screenSize.width * 0.55,
-                    // color: Color(0xFF9a00e6),
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("./assets/help.jpg"),
-                        fit: BoxFit.cover,
-                        // colorFilter: ColorFilter.mode(
-                        //   Color(0xFF9a00e6).withOpacity(1),
-                        //   BlendMode.lighten,
-                        // ),
-                        colorFilter: ColorFilter.mode(
-                          Colors.blueGrey.withOpacity(0.8),
-                          BlendMode.lighten,
-                        ),
-                        // colorFilter: ColorFilter.mode(
-                        //   Colors.blue,
-                        //   BlendMode.lighten,
-                        // ),
-                      ),
-                    ),
-                    // color: Colors.blue[900],
-                    // child: Column(
-                    //   mainAxisAlignment: MainAxisAlignment.center,
-                    //   children: [
-                    //     Container(
-                    //       child: Text(
-                    //         "Contact Us",
-                    //         style: TextStyle(
-                    //           color: Colors.pinkAccent[400],
-                    //           fontSize: 50,
-                    //           fontFamily: "Segoe",
-                    //           fontWeight: FontWeight.bold,
-                    //         ),
-                    //       ),
-                    //     ),
-                    //     Container(
-                    //       margin: EdgeInsets.only(bottom: 20),
-                    //       child: Text(
-                    //         "Find a solution for your problem",
-                    //         style: TextStyle(
-                    //           color: Colors.pinkAccent[400],
-                    //         ),
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
-                  ),
+                  // Container(
+                  //   height: screenSize.height,
+                  //   width: Responsive.isSmallScreen(context)
+                  //       ? screenSize.width
+                  //       : screenSize.width * 0.55,
+                  //   // color: Color(0xFF9a00e6),
+                  //   decoration: BoxDecoration(
+                  //     image: DecorationImage(
+                  //       image: AssetImage("./assets/help.jpg"),
+                  //       fit: BoxFit.cover,
+                  //       // colorFilter: ColorFilter.mode(
+                  //       //   Color(0xFF9a00e6).withOpacity(1),
+                  //       //   BlendMode.lighten,
+                  //       // ),
+                  //       colorFilter: ColorFilter.mode(
+                  //         Colors.blueGrey.withOpacity(0.8),
+                  //         BlendMode.lighten,
+                  //       ),
+                  //       // colorFilter: ColorFilter.mode(
+                  //       //   Colors.blue,
+                  //       //   BlendMode.lighten,
+                  //       // ),
+                  //     ),
+                  //   ),
+                  //   // color: Colors.blue[900],
+                  //   // child: Column(
+                  //   //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   //   children: [
+                  //   //     Container(
+                  //   //       child: Text(
+                  //   //         "Contact Us",
+                  //   //         style: TextStyle(
+                  //   //           color: Colors.pinkAccent[400],
+                  //   //           fontSize: 50,
+                  //   //           fontFamily: "Segoe",
+                  //   //           fontWeight: FontWeight.bold,
+                  //   //         ),  
+                  //   //       ),
+                  //   //     ),
+                  //   //     Container(
+                  //   //       margin: EdgeInsets.only(bottom: 20),
+                  //   //       child: Text(
+                  //   //         "Find a solution for your problem",
+                  //   //         style: TextStyle(
+                  //   //           color: Colors.pinkAccent[400],
+                  //   //         ),
+                  //   //       ),
+                  //   //     ),
+                  //   //   ],
+                  //   // ),
+                  // ),
                   Container(
                     height: screenSize.height,
                     child: Column(

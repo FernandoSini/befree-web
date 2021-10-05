@@ -137,7 +137,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                                                   fontSize:
                                                       Responsive.isSmallScreen(
                                                               context)
-                                                          ? 30
+                                                          ? 40
                                                           : 50,
                                                   color: Colors.black,
                                                 ),
@@ -150,7 +150,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                                                   fontSize:
                                                       Responsive.isSmallScreen(
                                                               context)
-                                                          ? 30
+                                                          ? 40
                                                           : 50,
                                                   color: Color(0xFF9a00e6),
                                                 ),
@@ -164,7 +164,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                                             Responsive.isSmallScreen(context)
                                                 ? EdgeInsets.only(right: 200)
                                                 : EdgeInsets.only(
-                                                    left: 150, right: 150),
+                                                    left: 60, right: 50),
                                         child: Text(
                                           "Content 1 aiushdasuhdkjsaasjdhakjsdhkjashdkjashdjkasdhkjashdjkaahdkjashdjkashdjashdkahsjkdhaskdhaskdhaksdhkasdhsakdhaskjdhakjsdhaksjdhakjshdjksahdjkas",
                                           softWrap: true,
@@ -174,7 +174,10 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                                             color: Colors.black,
                                             fontWeight: FontWeight.bold,
                                             // fontFamily: "Segoe",
-                                            fontSize: 13,
+                                            fontSize: Responsive.isSmallScreen(
+                                                    context)
+                                                ? 20
+                                                : 30,
                                           ),
                                         ),
                                       ),
@@ -272,20 +275,20 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                                     text: TextSpan(
                                       children: [
                                         TextSpan(
-                                          text: "Confia ",
+                                          text: "Your Security ",
                                           style: TextStyle(
                                             fontFamily: "Segoe",
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 50,
+                                            fontSize: 40,
                                           ),
                                         ),
                                         TextSpan(
-                                          text: "na call ",
+                                          text: "in first place",
                                           style: TextStyle(
                                             fontFamily: "Segoe",
                                             fontWeight: FontWeight.bold,
                                             color: Color(0xFF9a00e6),
-                                            fontSize: 50,
+                                            fontSize: 40,
                                           ),
                                         ),
                                       ],
@@ -295,14 +298,18 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                                 Container(
                                   padding: Responsive.isSmallScreen(context)
                                       ? null
-                                      : EdgeInsets.only(left: 100, right: 100),
+                                      : EdgeInsets.only(
+                                          top: 15, left: 60, right: 50),
                                   child: Text(
-                                    "Content 2 aiushdasuhdkjsaasjdhakjsdhkjashdkjashdjkasdhkjashdjkaahdkjashdjkashdjashdkahsjkdhaskdhaskdhaksdhkasdhsakdhaskjdhakjsdhaksjdhakjshdjksahdjkasaksudhuiasydhuasiydiasdajksdhkajs",
+                                    "With us your safety is guaranteed while trying to get a new encounter",
                                     softWrap: true,
                                     maxLines: null,
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 13,
+                                      fontSize:
+                                          Responsive.isSmallScreen(context)
+                                              ? 20
+                                              : 30,
                                     ),
                                   ),
                                 ),
@@ -310,81 +317,108 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                             ),
                           ),
                         ],
-                      )
+                      ),
+                      Wrap(
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        direction: Responsive.isSmallScreen(context)
+                            ? Axis.vertical
+                            : Axis.horizontal,
+                        children: [
+                          Container(
+                            height: screenSize.height,
+                            width: screenSize.width * 0.5,
+                            child: Column(
+                              children: [
+                                Container(
+                                  alignment: Responsive.isSmallScreen(context)
+                                      ? null
+                                      : Alignment.centerLeft,
+                                  margin: Responsive.isSmallScreen(context)
+                                      ? EdgeInsets.only(top: 200)
+                                      : EdgeInsets.only(top: 200, left: 60),
+                                  child: RichText(
+                                    softWrap: true,
+                                    text: TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: "Create ",
+                                          style: TextStyle(
+                                            fontFamily: "Segoe",
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 40,
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          text: " Events",
+                                          style: TextStyle(
+                                            fontFamily: "Segoe",
+                                            fontWeight: FontWeight.bold,
+                                            color: Color(0xFF9a00e6),
+                                            fontSize: 40,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  padding: Responsive.isSmallScreen(context)
+                                      ? null
+                                      : EdgeInsets.only(
+                                          top: 15, left: 60, right: 50),
+                                  child: Text(
+                                    "Create and promote your events on our platform with safety",
+                                    softWrap: true,
+                                    maxLines: null,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize:
+                                          Responsive.isSmallScreen(context)
+                                              ? 20
+                                              : 30,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: screenSize.height,
+                            width: screenSize.width * 0.5,
+                            child: Stack(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(top: 100),
+                                  height: screenSize.height * 0.7,
+                                  child: Center(
+                                    child: Container(
+                                      child: Text(
+                                        "BeFree",
+                                        softWrap: true,
+                                        style: TextStyle(
+                                          fontFamily: "Segoe",
+                                          fontWeight: FontWeight.bold,
+                                          color: Color(0xFF9a00e6),
+                                          fontSize: 30,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                        "./assets/iphonemock2.png",
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
-                  // Positioned(
-                  //   left: 50,
-                  //   right: 50,
-                  //   top: screenSize.height * 0.20,
-                  //   child: Card(
-                  //     elevation: 8,
-                  //     color: Colors.white,
-                  //     shape: RoundedRectangleBorder(
-                  //       borderRadius: BorderRadius.circular(30),
-                  //     ),
-                  //     shadowColor: Colors.black,
-                  //     child: Container(
-                  //       height: screenSize.height * 0.5,
-                  //       width: screenSize.width * 0.5,
-                  //       child: Row(
-                  //         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  //         children: [
-                  //           Flexible(
-                  //             child: Container(
-                  //               padding: EdgeInsets.only(left: 200, right: 200),
-                  //               child: Column(
-                  //                 mainAxisAlignment: MainAxisAlignment.center,
-                  //                 children: [
-                  //                   Container(
-                  //                     child: Flexible(
-                  //                       child: Text(
-                  //                         "akjsdhjakshkjashdkjaksdkas",
-                  //                         softWrap: true,
-                  //                         maxLines: null,
-                  //                         textAlign: TextAlign.justify,
-                  //                         style: TextStyle(
-                  //                           fontWeight: FontWeight.bold,
-                  //                           // decorationThickness: 10,
-                  //                           fontSize: 30,
-                  //                         ),
-                  //                       ),
-                  //                     ),
-                  //                   ),
-                  //                   const SizedBox(
-                  //                     height: 20,
-                  //                   ),
-                  //                   Flexible(
-                  //                     child: Container(
-                  //                       child: Text(
-                  //                         "We're group of people trying to make a new way to get a match",
-                  //                         softWrap: true,
-                  //                         style: TextStyle(
-                  //                           fontWeight: FontWeight.bold,
-                  //                         ),
-                  //                         textAlign: TextAlign.justify,
-                  //                         maxLines: null,
-                  //                       ),
-                  //                     ),
-                  //                   ),
-                  //                 ],
-                  //               ),
-                  //             ),
-                  //           ),
-                  //           Container(
-                  //             height: 500,
-                  //             width: 500,
-                  //             decoration: BoxDecoration(
-                  //               image: DecorationImage(
-                  //                 image: AssetImage("./assets/team.jpg"),
-                  //               ),
-                  //             ),
-                  //           )
-                  //         ],
-                  //       ),
-                  //     ),
-                  //   ),
-                  // )
                 ],
               ),
               FooterWidget(onHoverList)

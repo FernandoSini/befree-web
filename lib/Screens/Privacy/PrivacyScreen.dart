@@ -23,6 +23,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
     false,
   ];
   final ScrollController scrollController = ScrollController();
+  final scrollControllerBox = ScrollController();
   Future<String> loadPrivacy(BuildContext context) async {
     return await DefaultAssetBundle.of(context)
         .loadString('assets/politicaDePrivacidade.txt');
@@ -60,7 +61,7 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width * 0.5,
             child: SingleChildScrollView(
-              controller: scrollController,
+              controller: scrollControllerBox,
               physics: BouncingScrollPhysics(),
               child: Column(
                 children: [
@@ -164,9 +165,11 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                         "Your privacy is important for us",
                         textAlign: TextAlign.justify,
                         style: TextStyle(
-                            // color: Colors.white,
-                            //  color: Color(0xFF9a00e6),
-                            color: Colors.black),
+                          // color: Colors.white,
+                          //  color: Color(0xFF9a00e6),
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold, fontSize: 25,
+                        ),
                       ),
                     ),
                     const SizedBox(
