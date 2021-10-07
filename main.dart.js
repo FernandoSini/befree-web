@@ -35285,7 +35285,7 @@ U(a,a0){var s,r=null,q=4288282854,p="Segoe",o="BeFree",n="./assets/iphonemock2.p
 e=M.aL(r,T.F3(r,r,C.b4,!0,r,Q.dz(H.a([d,Q.dz(r,A.ba(r,r,new P.w(q),r,r,r,r,r,p,r,r,c,r,C.K,r,r,!0,r,r,r,r,r,r,r,r)," BeFree")],b),r,r),C.a0,r,r,1,C.ar),r,r,r,new V.a9(0,200,0,0),e,r)
 d=a0.H(m).f.a.a<800?new V.a9(0,0,200,0):new V.a9(60,0,50,0)
 c=t.F
-f=H.a([M.aL(r,T.df(H.a([e,M.aL(r,L.bp("Content 1 aiushdasuhdkjsaasjdhakjsdhkjashdkjashdjkasdhkjashdjkaahdkjashdjkashdjashdkahsjkdhaskdhaskdhaksdhkasdhsakdhaskjdhakjsdhaksjdhakjshdjksahdjkas",r,r,r,!0,A.ba(r,r,C.r,r,r,r,r,r,r,r,r,a0.H(m).f.a.a<800?20:30,r,C.K,r,r,!0,r,r,r,r,r,r,r,r),C.dE,r),r,r,r,r,d,r)],c),C.a2,C.a6,C.a7),r,r,j,r,r,f)],c)
+f=H.a([M.aL(r,T.df(H.a([e,M.aL(r,L.bp("Content 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean est arcu, vulputate vitae dolor eget, imperdiet convallis nulla. Nullam euismod vel nibh quis molestie. Duis ac bibendum ipsum. ",r,r,r,!0,A.ba(r,r,C.r,r,r,r,r,r,r,r,r,a0.H(m).f.a.a<800?20:30,r,C.K,r,r,!0,r,r,r,r,r,r,r,r),C.dE,r),r,r,r,r,d,r)],c),C.a2,C.a6,C.a7),r,r,j,r,r,f)],c)
 if(!(a0.H(m).f.a.a<800))f.push(M.aL(r,T.kq(C.bq,H.a([M.aL(r,T.ii(M.aL(r,L.bp(o,r,r,r,r,A.ba(r,r,new P.w(q),r,r,r,r,r,p,r,r,30,r,C.K,r,r,!0,r,r,r,r,r,r,r,r),r,r),r,r,r,r,new V.a9(0,20,0,0),r),r,r),r,new S.dp(r,X.Br(r,C.dV,new L.e0("./assets/iphonemock1.png")),r,r,r,r,C.a1),r,new V.a9(0,0,0,65),r,r)],c),C.bn),r,r,j,r,r,k*0.5))
 else f.push(M.aL(r,r,r,r,r,r,r,r))
 g=H.a([T.kz(f,C.f8,g)],c)
